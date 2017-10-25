@@ -1,0 +1,20 @@
+plugins {
+    id "com.athaydes.osgi-run" version "1.6.0"
+}
+
+allprojects {
+    group 'com.athaydes.osgi'
+    version '1.0-SNAPSHOT'
+
+    repositories {
+        jcenter()
+    }
+}
+
+dependencies {
+    //osgiRuntime 'org.apache.aries.rsa.provider:org.apache.aries.rsa.provider:tcp:1.11.0'
+}
+
+runOsgi {
+    bundles += subprojects
+}

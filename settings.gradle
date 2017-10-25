@@ -1,0 +1,5 @@
+rootProject.name = 'aries-rsa-example'
+include 'osgi-server'
+include 'osgi-client'
+include 'api'
+
