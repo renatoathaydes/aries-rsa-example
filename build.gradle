@@ -12,9 +12,14 @@ allprojects {
 }
 
 dependencies {
-    //osgiRuntime 'org.apache.aries.rsa.provider:org.apache.aries.rsa.provider:tcp:1.11.0'
+    // Logging
+    osgiRuntime 'org.apache.felix:org.apache.felix.log:1.0.1', {
+        transitive = false
+    }
+    osgiRuntime 'com.athaydes.osgiaas:slf4j-to-osgi-log:1.7.0'
 }
 
 runOsgi {
     bundles += subprojects
+    config += [ 'org.osgi.framework.system.packages.extra': 'sun.misc' ]
 }

@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package aries_rsa_example;
+
+option java_package = "com.athaydes.osgi.api";
+option java_outer_classname = "Messages";
+
+message TestInfo {
+    string testClass = 1;
+    string testMethod = 2;
+}
+
+message TestResult {
+    TestInfo info = 1;
+    Status status = 2;
+
+    enum Status {
+        UNKNOWN = 0;
+        IGNORED = 1;
+        SUCCESS = 2;
+        FAIL = 3;
+        ERROR = 4;
+    }
+}

@@ -1,13 +1,14 @@
 package com.athaydes.osgi.api;
 
-import java.lang.annotation.Annotation;
+import com.google.protobuf.Message;
+
 import java.util.function.Consumer;
 
 /**
  *
  */
-public interface MessageService extends Consumer<Annotation> {
+public interface MessageService extends Consumer<Message> {
 
-    void addListener( Listener<? extends Annotation> listener );
+    void addListener( Listener<? extends Message> listener );
 
 }

@@ -1,11 +1,11 @@
 package com.athaydes.osgi.api;
 
-import java.lang.annotation.Annotation;
+import com.google.protobuf.Message;
 
 /**
  *
  */
-public interface Listener<M extends Annotation> {
+public interface Listener<M extends Message> {
 
     Class<M> messageType();
 

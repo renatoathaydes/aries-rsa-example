@@ -7,7 +7,7 @@ sourceCompatibility = 1.8
 
 dependencies {
     compile project( ':api' )
-    compile "com.athaydes.javanna:javanna:1.1"
+    compile "com.athaydes.osgiaas:osgiaas-cli-api:0.7"
     compileOnly "org.osgi:org.osgi.service.component.annotations:1.3.0"
 }
 
