@@ -1,0 +1,11 @@
+<endpoint-descriptions xmlns="http://www.osgi.org/xmlns/rsa/v1.0.0">
+    <endpoint-description>
+        <property name="objectClass">
+            <array>
+                <value>com.athaydes.osgi.api.MessageService</value>
+            </array>
+        </property>
+        <property name="endpoint.id">tcp://127.0.0.1:5556</property>
+        <property name="service.imported.configs">com.athaydes.protobuf</property>
+    </endpoint-description>
+</endpoint-descriptions>

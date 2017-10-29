@@ -1,14 +1,13 @@
 package com.athaydes.osgi.api;
 
-import com.google.protobuf.Message;
-
-import java.util.function.Consumer;
+import com.athaydes.osgi.api.Messages.TestInfo;
+import com.athaydes.osgi.api.Messages.TestResult;
 
 /**
  *
  */
-public interface MessageService extends Consumer<Message> {
+public interface MessageService {
 
-    void addListener( Listener<? extends Message> listener );
+    TestResult send(TestInfo info);
 
 }

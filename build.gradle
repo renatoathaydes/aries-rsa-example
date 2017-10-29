@@ -7,11 +7,20 @@ allprojects {
     version '1.0-SNAPSHOT'
 
     repositories {
+        mavenLocal()
         jcenter()
     }
 }
 
 dependencies {
+    // Aries RSA bundles
+    final ariesRsaVersion = '1.11.0'
+    osgiRuntime "org.apache.aries.rsa:org.apache.aries.rsa.core:$ariesRsaVersion"
+    osgiRuntime "org.apache.aries.rsa:org.apache.aries.rsa.spi:$ariesRsaVersion"
+    osgiRuntime osgi("org.apache.aries.rsa:org.apache.aries.rsa.topology-manager:$ariesRsaVersion:6".toString())
+    osgiRuntime "org.apache.aries.rsa.discovery:org.apache.aries.rsa.discovery.local:$ariesRsaVersion"
+    osgiRuntime "com.athaydes.osgi:protobuf-tcp-rsa-provider:1.0-SNAPSHOT"
+
     // Logging
     osgiRuntime 'org.apache.felix:org.apache.felix.log:1.0.1', {
         transitive = false
@@ -20,6 +29,17 @@ dependencies {
 }
 
 runOsgi {
-    bundles += subprojects
-    config += [ 'org.osgi.framework.system.packages.extra': 'sun.misc' ]
+    if (project.hasProperty('client')) {
+        println "Building client configuration"
+        outDir = 'client'
+        bundles += [project(':osgi-client'), project(':api')]
+    } else {
+        println "Building server configuration"
+        outDir = 'server'
+        bundles += [project(':osgi-server'), project(':api')]
+    }
+    bundlesPath = 'auto-deploy'
+
+    config += ['org.osgi.framework.system.packages.extra': 'sun.misc',
+               'org.osgi.framework.startlevel.beginning' : 10]
 }
