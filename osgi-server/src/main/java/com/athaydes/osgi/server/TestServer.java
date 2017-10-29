@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 
 @Component(immediate = true, property = {
         "service.exported.interfaces=*",
-        "aries.rsa.port=5556"
+        "com.athaydes.protobuf.port=5561"
 })
 public class TestServer implements MessageService {
 

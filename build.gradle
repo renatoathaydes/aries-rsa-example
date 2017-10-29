@@ -17,7 +17,11 @@ dependencies {
     final ariesRsaVersion = '1.11.0'
     osgiRuntime "org.apache.aries.rsa:org.apache.aries.rsa.core:$ariesRsaVersion"
     osgiRuntime "org.apache.aries.rsa:org.apache.aries.rsa.spi:$ariesRsaVersion"
+
+    // set topology-manager's startLevel to 6 to make sure it starts AFTER the RSA Core,
+    // otherwise it will not work
     osgiRuntime osgi("org.apache.aries.rsa:org.apache.aries.rsa.topology-manager:$ariesRsaVersion:6".toString())
+
     osgiRuntime "org.apache.aries.rsa.discovery:org.apache.aries.rsa.discovery.local:$ariesRsaVersion"
     osgiRuntime "com.athaydes.osgi:protobuf-tcp-rsa-provider:1.0-SNAPSHOT"
 

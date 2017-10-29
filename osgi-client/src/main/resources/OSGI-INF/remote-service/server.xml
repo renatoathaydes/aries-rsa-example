@@ -5,7 +5,7 @@
                 <value>com.athaydes.osgi.api.MessageService</value>
             </array>
         </property>
-        <property name="endpoint.id">tcp://127.0.0.1:5556</property>
+        <property name="endpoint.id">tcp://127.0.0.1:5561</property>
         <property name="service.imported.configs">com.athaydes.protobuf</property>
     </endpoint-description>
 </endpoint-descriptions>
