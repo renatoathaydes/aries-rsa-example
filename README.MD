@@ -51,7 +51,8 @@ Similarly, to run the client:
 bash build/client/run.sh
 ```
 
-On both server and client, a OSGi-CLI shell is started, which allows you to inspect the OSGi environment.
+On both server and client, a [OSGiaaS-CLI shell](https://sites.google.com/a/athaydes.com/renato-athaydes/posts/osgiaas-cli-aclitoruncommandswritteninjvmlanguages?pli=1) 
+is started, which allows you to inspect the OSGi environment.
 
 For example, run `ps` to see the installed bundles, or `headers 3` to see the configuration of bundle with ID `3`.
 
@@ -120,4 +121,3 @@ Type `./gradlew dep` to see the dependency tree, or, after starting the CLI, typ
 
 > IMPORTANT: Notice that the RSA Topology Manager must have a start level higher than the RSA Core bundle otherwise
   the Topology Manager might fail to see the RSA Admin Service.
-
