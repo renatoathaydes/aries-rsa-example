@@ -23,7 +23,9 @@ dependencies {
     osgiRuntime osgi("org.apache.aries.rsa:org.apache.aries.rsa.topology-manager:$ariesRsaVersion:6".toString())
 
     osgiRuntime "org.apache.aries.rsa.discovery:org.apache.aries.rsa.discovery.local:$ariesRsaVersion"
-    osgiRuntime "com.athaydes.osgi:protobuf-tcp-rsa-provider:1.0-SNAPSHOT"
+
+    // OSGi RSA Provider
+    osgiRuntime "com.athaydes.osgi:protobuf-tcp-rsa-provider:0.1.0"
 
     // Logging
     osgiRuntime 'org.apache.felix:org.apache.felix.log:1.0.1', {
